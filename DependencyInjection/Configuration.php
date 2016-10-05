@@ -20,10 +20,10 @@ use Sylius\Component\Archetype\Model\Archetype;
 use Sylius\Component\Archetype\Model\ArchetypeInterface;
 use Sylius\Component\Archetype\Model\ArchetypeTranslation;
 use Sylius\Component\Archetype\Model\ArchetypeTranslationInterface;
-use Sylius\Component\Attribute\Model\Attribute;
+use Sylius\Component\Product\Model\ProductAttribute;
 use Sylius\Component\Resource\Factory\Factory;
 use Sylius\Component\Resource\Factory\TranslatableFactory;
-use Sylius\Component\Variation\Model\Option;
+use Sylius\Component\Product\Model\ProductOption;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -70,8 +70,8 @@ class Configuration implements ConfigurationInterface
                     ->prototype('array')
                         ->children()
                             ->scalarNode('subject')->isRequired()->cannotBeEmpty()->end()
-                            ->scalarNode('attribute')->isRequired()->defaultValue(Attribute::class)->cannotBeEmpty()->end()
-                            ->scalarNode('option')->isRequired()->defaultValue(Option::class)->cannotBeEmpty()->end()
+                            ->scalarNode('attribute')->isRequired()->defaultValue(ProductAttribute::class)->cannotBeEmpty()->end()
+                            ->scalarNode('option')->isRequired()->defaultValue(ProductOption::class)->cannotBeEmpty()->end()
                             ->arrayNode('archetype')
                                 ->addDefaultsIfNotSet()
                                 ->children()
