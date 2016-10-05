@@ -27,8 +27,8 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         $this->beConstructedWith([
             'product' => [
                 'subject' => 'Some\App\Product\Entity\Product',
-                'attribute' => 'Some\App\Product\Entity\Attribute',
-                'option' => 'Some\App\Product\Entity\Option',
+                'attribute' => 'Some\App\Product\Entity\ProductAttribute',
+                'option' => 'Some\App\Product\Entity\ProductOption',
                 'archetype' => [
                     'classes' => [
                         'model' => 'Some\App\Product\Entity\Archetype',
@@ -73,7 +73,7 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         $attributeMapping = [
             'fieldName' => 'attributes',
             'type' => ClassMetadataInfo::MANY_TO_MANY,
-            'targetEntity' => 'Some\App\Product\Entity\Attribute',
+            'targetEntity' => 'Some\App\Product\Entity\ProductAttribute',
             'joinTable' => [
                 'name' => 'sylius_product_archetype_attribute',
                 'joinColumns' => [[
@@ -96,7 +96,7 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         $optionMapping = [
             'fieldName' => 'options',
             'type' => ClassMetadataInfo::MANY_TO_MANY,
-            'targetEntity' => 'Some\App\Product\Entity\Option',
+            'targetEntity' => 'Some\App\Product\Entity\ProductOption',
             'joinTable' => [
                 'name' => 'sylius_product_archetype_option',
                 'joinColumns' => [[
